@@ -39,3 +39,13 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 ## Link Demo:
 
 link demo: https://ruang-cerita-natagw.vercel.app
+
+
+## Deskripsi Fitur:
+
+1. Like dan Dislike
+2. Login: Tersedia login menggunakan kredensial, GitHub, dan Google.
+3. CRUD Content Writter
+4. Proses Persetujuan Konten: Karangan memerlukan persetujuan admin sebelum diterbitkan.
+5. Status Content Writter: Penulis menerima status karangan mereka dari persetujuan admin.
+6. UI yang sederhana
