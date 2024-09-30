@@ -48,4 +48,4 @@ link demo: https://ruang-cerita-natagw.vercel.app
 3. CRUD Content Writter
 4. Proses Persetujuan Konten: Karangan memerlukan persetujuan admin sebelum diterbitkan.
 5. Status Content Writter: Penulis menerima status karangan mereka dari persetujuan admin.
-6. UI yang sederhana
+6. UI yang sangat sederhana
