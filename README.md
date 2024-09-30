@@ -44,7 +44,7 @@ link demo: https://ruang-cerita-natagw.vercel.app
 ## Deskripsi Fitur:
 
 1. Like dan Dislike
-2. Login: Tersedia login menggunakan kredensial, GitHub, dan Google.
+2. Tersedia login menggunakan kredensial, GitHub, dan Google.
 3. CRUD Content Writter
 4. Proses Persetujuan Konten: Karangan memerlukan persetujuan admin sebelum diterbitkan.
 5. Status Content Writter: Penulis menerima status karangan mereka dari persetujuan admin.
