@@ -1,51 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ruang Cerita 📝
 
-## Getting Started
+![Ruang Cerita](./public/ruang_cerita.png)
 
-First, run the development server:
+Ruang Cerita adalah sebuah platform web untuk menulis, membagikan, dan berinteraksi dengan cerita (blog) favorit Anda. Aplikasi ini dibangun dengan teknologi modern untuk memberikan pengalaman terbaik kepada pengguna.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Link Demo
+Anda dapat mengakses versi live dari aplikasi ini melalui tautan berikut:
+**[https://ruang-cerita-natagw.vercel.app](https://ruang-cerita-natagw.vercel.app)**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ✨ Fitur Utama
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Sistem Autentikasi yang Fleksibel (NextAuth v5)**
+   - Tersedia login menggunakan **Kredensial** (Email & Password).
+   - Mendukung OAuth login menggunakan **GitHub**.
+   - Mendukung OAuth login menggunakan **Google**.
 
-## Learn More
+2. **Manajemen Pengguna (Role-based)**
+   - Terdapat sistem *role* seperti `admin` dan `writer` untuk mengatur otorisasi halaman.
 
-To learn more about Next.js, take a look at the following resources:
+3. **Sistem Blog / Artikel**
+   - Fitur membuat, membaca, memperbarui, dan menghapus (CRUD) blog/cerita.
+   - Penulisan konten yang kaya didukung oleh integrasi **CKEditor 5**.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. **Interaksi Pengguna**
+   - **Sistem Like (Like/Dislike):** Pengguna dapat menyukai cerita yang mereka baca.
+   - **Sistem Komentar:** Pengguna dapat berdiskusi dan memberikan komentar pada setiap cerita.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🛠️ Teknologi yang Digunakan
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Framework:** [Next.js](https://nextjs.org/) (App Router)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/) & [DaisyUI](https://daisyui.com/)
+- **Database:** MySQL
+- **ORM:** [Prisma Client](https://www.prisma.io/)
+- **Authentication:** [Auth.js / NextAuth v5](https://authjs.dev/)
+- **Editor:** CKEditor 5
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
 
+## 💻 Cara Menjalankan secara Lokal
 
-## Link Demo:
+1. **Clone repository ini**
+   ```bash
+   git clone <repo-url>
+   cd ruang-cerita-natagw
+   ```
 
-link demo: https://ruang-cerita-natagw.vercel.app
+2. **Install Dependensi**
+   ```bash
+   npm install
+   ```
 
+3. **Atur Environment Variables**
+   Buat file `.env` di *root* direktori dan isikan konfigurasi berikut (sesuaikan dengan database Anda):
+   ```env
+   DATABASE_URL="mysql://root:root123@localhost:3308/db_ruang_cerita"
+   AUTH_SECRET="secret_acak_anda"
+   
+   AUTH_GOOGLE_ID="google_id_anda"
+   AUTH_GOOGLE_SECRET="google_secret_anda"
+   
+   AUTH_GITHUB_ID="github_id_anda"
+   AUTH_GITHUB_SECRET="github_secret_anda"
+   ```
 
-## Deskripsi Fitur:
+4. **Migrasi / Sinkronisasi Database**
+   ```bash
+   npx prisma db push
+   ```
 
-1. Like dan Dislike
-2. Tersedia login menggunakan kredensial, GitHub, dan Google.
-3. CRUD Content Writter
-4. Proses Persetujuan Konten: Karangan memerlukan persetujuan admin sebelum diterbitkan.
-5. Status Content Writter: Penulis menerima status karangan mereka dari persetujuan admin.
-6. UI yang sangat sederhana
+5. **Jalankan Server Development**
+   ```bash
+   npm run dev
+   ```
+   Buka [http://localhost:3000](http://localhost:3000) di browser Anda untuk melihat hasilnya.
