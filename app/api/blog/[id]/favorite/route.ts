@@ -6,16 +6,21 @@ const prisma = new PrismaClient();
 export const POST = async (request: Request) => {
     const session = await auth();
 
+    if (!session || !session.user) {
+        return NextResponse.json({ message: 'Unauthorized' }, { status: 401 });
+    }
+
     try {
         const { blogId } = await request.json();
         const blog = await prisma.like.create({
             data: {
                 blogId,
-                userId: session?.user.id,
+                userId: session.user.id,
             }
         });
         return NextResponse.json(blog, { status: 201 });
     } catch (error) {
         console.log(error);
+        return NextResponse.json({ message: 'Internal Server Error' }, { status: 500 });
     }
 }

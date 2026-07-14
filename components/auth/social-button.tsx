@@ -6,10 +6,10 @@ export const GoogleButton = () => {
         <form action={async () => {
             "use server";
             await signIn("google", { redirectTo: "/dashboard" });
-        }}>
-            <button type="submit" className="flex items-center justify-center gap-1 py-2.5 rounded-lg uppercase text-white font-medium text-sm bg-blue-500 hover:bg-blue-800 w-full">
-                <IoLogoGoogle />
-                Sign In With Google
+        }} className="w-full">
+            <button type="submit" className="w-full flex items-center justify-center gap-2.5 py-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 font-semibold text-sm transition-all duration-200 active:scale-[0.98] shadow-sm">
+                <IoLogoGoogle className="text-lg text-red-500" />
+                <span>Sign in with Google</span>
             </button>
         </form>
     )
@@ -20,10 +20,10 @@ export const GithubButton = () => {
         <form action={async () => {
             "use server";
             await signIn("github", { redirectTo: "/dashboard" });
-        }}>
-            <button type="submit" className="flex items-center justify-center gap-1 py-2.5 rounded-lg uppercase text-white font-medium text-sm bg-gray-500 hover:bg-gray-800 w-full">
-                <IoLogoGithub />
-                Sign In With Github
+        }} className="w-full">
+            <button type="submit" className="w-full flex items-center justify-center gap-2.5 py-2.5 rounded-xl border border-slate-800 bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm transition-all duration-200 active:scale-[0.98] shadow-md shadow-slate-900/10">
+                <IoLogoGithub className="text-lg text-white" />
+                <span>Sign in with GitHub</span>
             </button>
         </form>
     )

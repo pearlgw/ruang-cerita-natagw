@@ -1,3 +1,122 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Custom CKEditor Styling Overrides */
+.ck.ck-editor {
+  width: 100% !important;
+  transition: all 0.2s ease-in-out;
+  border-radius: 14px;
+}
+
+/* Unified focus shadow on the entire editor container */
+.ck.ck-editor:focus-within {
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.12) !important;
+}
+
+.ck-editor__editable_inline {
+  min-height: 220px !important;
+  max-height: 350px !important;
+}
+
+.ck.ck-editor__main > .ck-editor__editable {
+  border-bottom-left-radius: 14px !important;
+  border-bottom-right-radius: 14px !important;
+  border: 1px solid #e2e8f0 !important;
+  border-top: none !important;
+  background-color: #fcfdfe !important;
+  padding: 0 1.25rem !important;
+  color: #1e293b !important;
+  font-size: 0.875rem !important;
+  line-height: 1.6 !important;
+  white-space: normal !important;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Remove individual focus shadow and match border on focus */
+.ck.ck-editor__main > .ck-editor__editable.ck-focused {
+  border-color: #6366f1 !important;
+  background-color: #ffffff !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.ck.ck-toolbar {
+  border-top-left-radius: 14px !important;
+  border-top-right-radius: 14px !important;
+  border: 1px solid #e2e8f0 !important;
+  background-color: #f8fafc !important;
+  padding: 0.5rem !important;
+  gap: 0.25rem !important;
+  flex-wrap: nowrap !important;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Match toolbar border color on focus */
+.ck.ck-editor:focus-within .ck-toolbar {
+  border-color: #6366f1 !important;
+}
+
+.ck.ck-toolbar__separator {
+  background-color: #e2e8f0 !important;
+}
+
+.ck.ck-button {
+  border-radius: 8px !important;
+  color: #64748b !important;
+  transition: all 0.15s ease-in-out;
+}
+
+.ck.ck-button:hover {
+  background-color: #f1f5f9 !important;
+  color: #334155 !important;
+}
+
+.ck.ck-button.ck-on {
+  background-color: #e0e7ff !important;
+  color: #4f46e5 !important;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Modal Fullscreen Editor Fix */
+.ck-editor-fullscreen {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+}
+.ck-editor-fullscreen .ck.ck-editor {
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+.ck-editor-fullscreen .ck.ck-editor__main {
+  flex: 1 !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+.ck-editor-fullscreen .ck-editor__editable_inline {
+  height: 100% !important;
+  max-height: none !important;
+  overflow-y: auto !important;
+}

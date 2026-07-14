@@ -7,7 +7,8 @@ export const getAllBlogs = async () => {
             include: {
                 user: {
                     select: {
-                        name: true
+                        name: true,
+                        image: true
                     }
                 },
             }
@@ -75,5 +76,32 @@ export const getLikes = async () => {
         } catch (error) {
             console.log(error)
         }
+    }
+}
+
+export const getStats = async () => {
+    try {
+        const totalBlogs = await prisma.blog.count();
+        const totalWriters = await prisma.user.count({
+            where: {
+                blogs: {
+                    some: {}
+                }
+            }
+        });
+        const totalUsers = await prisma.user.count();
+
+        return {
+            totalBlogs,
+            totalWriters,
+            totalUsers
+        };
+    } catch (error) {
+        console.error("Error fetching stats:", error);
+        return {
+            totalBlogs: 0,
+            totalWriters: 0,
+            totalUsers: 0
+        };
     }
 }
