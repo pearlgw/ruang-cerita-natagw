@@ -1,79 +1,84 @@
-# Ruang Cerita 📝
+# 📖 Ruang Cerita & Karya Kata
 
-![Ruang Cerita](./public/ruang_cerita.png)
+**Ruang Cerita** adalah platform menulis modern yang dirancang khusus untuk membagikan karya tulis, gagasan, opini, cerita pendek, dan kisah inspiratif terbaik dari seluruh penjuru dunia. Platform ini mengutamakan kenyamanan membaca dan kebebasan menulis melalui tampilan antarmuka yang bersih, premium, dan intuitif.
 
-Ruang Cerita adalah sebuah platform web untuk menulis, membagikan, dan berinteraksi dengan cerita (blog) favorit Anda. Aplikasi ini dibangun dengan teknologi modern untuk memberikan pengalaman terbaik kepada pengguna.
-
-## 🚀 Link Demo
-Anda dapat mengakses versi live dari aplikasi ini melalui tautan berikut:
-**[https://ruang-cerita-natagw.vercel.app](https://ruang-cerita-natagw.vercel.app)**
+🚀 **Live Website:** [room-story.natagw.my.id](https://room-story.natagw.my.id)
 
 ---
 
-## ✨ Fitur Utama
+## 🎨 Pamphlet & Poster Pameran
 
-1. **Sistem Autentikasi yang Fleksibel (NextAuth v5)**
-   - Tersedia login menggunakan **Kredensial** (Email & Password).
-   - Mendukung OAuth login menggunakan **GitHub**.
-   - Mendukung OAuth login menggunakan **Google**.
+Berikut adalah rancangan desain poster pameran resmi untuk platform **Ruang Cerita**:
 
-2. **Manajemen Pengguna (Role-based)**
-   - Terdapat sistem *role* seperti `admin` dan `writer` untuk mengatur otorisasi halaman.
-
-3. **Sistem Blog / Artikel**
-   - Fitur membuat, membaca, memperbarui, dan menghapus (CRUD) blog/cerita.
-   - Penulisan konten yang kaya didukung oleh integrasi **CKEditor 5**.
-
-4. **Interaksi Pengguna**
-   - **Sistem Like (Like/Dislike):** Pengguna dapat menyukai cerita yang mereka baca.
-   - **Sistem Komentar:** Pengguna dapat berdiskusi dan memberikan komentar pada setiap cerita.
+![Pamphlet Pameran Ruang Cerita](public/pamphlet-final.png)
 
 ---
 
-## 🛠️ Teknologi yang Digunakan
+## ✨ Fitur Unggulan
 
-- **Framework:** [Next.js](https://nextjs.org/) (App Router)
-- **Styling:** [Tailwind CSS](https://tailwindcss.com/) & [DaisyUI](https://daisyui.com/)
-- **Database:** MySQL
-- **ORM:** [Prisma Client](https://www.prisma.io/)
-- **Authentication:** [Auth.js / NextAuth v5](https://authjs.dev/)
-- **Editor:** CKEditor 5
+Platform ini dilengkapi dengan berbagai fitur modern guna menyajikan pengalaman menulis digital yang luar biasa:
+
+*   **Platform Menulis Modern (Rich Text Editor)**: Integrasi CKEditor modern yang responsif dan fleksibel untuk menyusun draf cerita dengan formatting lengkap.
+*   **Manajemen Cerita Lengkap (CRUD)**: Pengguna memiliki kendali mandiri untuk menambah, mengubah, dan menghapus tulisan mereka sendiri.
+*   **Sistem Kurasi & Moderasi Admin**: Fitur moderasi khusus admin untuk menyetujui (*approve*) atau menolak (*reject*) cerita kontributor demi menjaga kualitas konten platform.
+*   **Otentikasi Aman (Auth)**: Halaman *login* dan *register* yang dirancang aman, terisolasi dari *navbar* utama, dilengkapi fitur intip sandi (*toggle password visibility*), serta terkunci rapat (*viewport-fixed*) untuk kenyamanan maksimal di layar HP.
+*   **Desain Premium & Responsif**: Dibangun dengan tipografi premium *Plus Jakarta Sans*, tata letak yang bersih, antrean menu responsif (*mobile hamburger menu*), serta terbebas sepenuhnya dari *scroll bug* horizontal/vertikal.
+*   **Easter Egg Page (`/dev`)**: Halaman tersembunyi khusus profil pengembang (**Natagw**) yang memuat deskripsi pembuat serta tautan ke portofolio utama [me.natagw.my.id](https://me.natagw.my.id).
 
 ---
 
-## 💻 Cara Menjalankan secara Lokal
+## 💻 Tech Stack
 
-1. **Clone repository ini**
-   ```bash
-   git clone <repo-url>
-   cd ruang-cerita-natagw
-   ```
+Aplikasi ini dikembangkan menggunakan teknologi terkini di dunia web development:
 
-2. **Install Dependensi**
-   ```bash
-   npm install
-   ```
+*   **Framework**: [Next.js 14](https://nextjs.org/) (App Router & React Server Components)
+*   **Styling**: [TailwindCSS](https://tailwindcss.com/) & [DaisyUI](https://daisyui.com/)
+*   **Otentikasi**: [Auth.js / NextAuth](https://next-auth.js.org/)
+*   **Editor**: [CKEditor 5](https://ckeditor.com/ckeditor-5/)
+*   **Icons**: [React Icons](https://react-icons.github.io/react-icons/)
+*   **Database**: MySQL (Terintegrasi)
 
-3. **Atur Environment Variables**
-   Buat file `.env` di *root* direktori dan isikan konfigurasi berikut (sesuaikan dengan database Anda):
-   ```env
-   DATABASE_URL="mysql://root:root123@localhost:3308/db_ruang_cerita"
-   AUTH_SECRET="secret_acak_anda"
-   
-   AUTH_GOOGLE_ID="google_id_anda"
-   AUTH_GOOGLE_SECRET="google_secret_anda"
-   
-   AUTH_GITHUB_ID="github_id_anda"
-   AUTH_GITHUB_SECRET="github_secret_anda"
-   ```
+---
 
-4. **Migrasi / Sinkronisasi Database**
-   ```bash
-   npx prisma db push
-   ```
+## 🛠️ Langkah Menjalankan Project
 
-5. **Jalankan Server Development**
-   ```bash
-   npm run dev
-   ```
-   Buka [http://localhost:3000](http://localhost:3000) di browser Anda untuk melihat hasilnya.
+Ikuti instruksi berikut untuk menjalankan aplikasi di komputer lokal Anda:
+
+### 1. Kloning Repositori
+```bash
+git clone <repository-url>
+cd ruang-cerita-natagw
+```
+
+### 2. Instalasi Dependensi
+```bash
+npm install
+```
+
+### 3. Konfigurasi Environment Variables
+Buat file `.env` di direktori utama dan lengkapi konfigurasi berikut (sesuaikan dengan database dan NextAuth):
+```env
+DATABASE_URL="your-database-url"
+NEXTAUTH_SECRET="your-nextauth-secret"
+# Tambahan OAuth config jika menggunakan provider Google/GitHub
+```
+
+### 4. Menjalankan Server Development
+Jalankan dev server secara lokal:
+```bash
+npm run dev
+```
+Buka [http://localhost:3000](http://localhost:3000) pada browser Anda.
+
+### 5. Membuat Build Produksi
+Untuk mengecek validasi tipe dan membuat build produksi yang dioptimasi:
+```bash
+npm run build
+```
+
+---
+
+## 👤 Pengembang (Developer)
+
+Dikerjakan secara penuh oleh **Natagw**. 
+Kunjungi website portofolio resmi saya di: **[me.natagw.my.id](https://me.natagw.my.id)**
