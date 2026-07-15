@@ -13,7 +13,7 @@
     "@auth/prisma-adapter": "^2.5.0",
     "@ckeditor/ckeditor5-build-classic": "^28.0.0",
     "@ckeditor/ckeditor5-react": "^9.2.0",
-    "@prisma/client": "^5.20.0",
+    "@prisma/client": "^5.22.0",
     "axios": "^1.7.7",
     "bcrypt-ts": "^5.0.2",
     "daisyui": "^4.12.10",
@@ -23,6 +23,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.3.0",
+    "sharp": "^0.33.5",
     "zod": "^3.23.8"
   },
   "devDependencies": {
